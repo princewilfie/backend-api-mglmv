@@ -21,6 +21,10 @@ async function initialize() {
 
     db.Account.hasMany(db.RefreshToken, { onDelete: 'CASCADE'});
     db.RefreshToken.belongsTo(db.Account);
+    db.Appointment = require('../accounts/appointments.model')(sequelize); 
+    db.Review = require('../accounts/reviews.model')(sequelize); 
+
+
 
 
     await sequelize.sync();

@@ -20,6 +20,11 @@ app.use('/accounts', require('./accounts/accounts.controller'));
 // swagger docs route
 app.use('/api-docs', require('_helpers/swagger'));
 
+app.use('/appointments', require('./accounts/appointments.controller')); // Mount the events controller router
+app.use('/reviews', require('./accounts/reviews.controller')); // Mount the events controller router
+
+
+
 //global error handler
 app.use(errorHandler);
 
